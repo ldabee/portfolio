@@ -9,7 +9,7 @@ import Terminal from '../components/Terminal';
 
 
 
-const StartPage: FC = () => {
+const Portfolio: FC = () => {
   return (
     <div className="flex flex-col bg-gray-900 h-screen overflow-hidden">
       <Head>
@@ -35,4 +35,4 @@ const StartPage: FC = () => {
   )
 }
 
-export default StartPage
+export default Portfolio
