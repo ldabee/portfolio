@@ -47,7 +47,7 @@ const SideTwo: FC = () => {
       </div>
       {showList &&
         <div className="ml-2">
-          {projectsState.projects?.map((prj) => (
+          {projectsState?.projects?.map((prj) => (
 
             <div className="buttonNavTwo" key={prj.id}>
               <div className="flex justify-start leading-7" onClick={() => toggle(prj)}>
