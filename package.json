@@ -12,6 +12,7 @@
     "@types/react-redux": "^7.1.18",
     "aws-sdk": "^2.983.0",
     "bootstrap": "^5.1.0",
+    "critters": "^0.0.10",
     "material-table": "^1.69.3",
     "next": "latest",
     "react": "^17.0.2",
