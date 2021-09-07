@@ -1,6 +1,6 @@
 import { IProject } from "../models/IProjects";
 
-const API_URL: string = 'http://localhost:3000/api/projet'
+const API_URL: string = '/api/projet'
 
 export class ProjectsServices {
 
