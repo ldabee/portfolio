@@ -1,9 +1,16 @@
 const sqlite3 = require('sqlite3');
 const sqlite = require('sqlite');
 
+
+// Import path module
+const path = require('path')
+
+// Get the location of database.sqlite file
+const dbPath = path.resolve(__dirname, './database.db')
+
 async function openDb() {
   return sqlite.open({
-    filename: './database.db',
+    filename: dbPath,
     driver: sqlite3.Database,
   });
 }
