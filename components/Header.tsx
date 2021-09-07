@@ -28,7 +28,13 @@ const Header: FC = () => {
 
       <div className="flex">
         <MinusIcon className="button h-7" />
-        <DuplicateIcon className="button h-7" />
+        <DuplicateIcon className="button h-7" onClick={() => {
+          if (document.fullscreenElement) {
+            document.exitFullscreen()
+          } else {
+            document.documentElement.requestFullscreen()
+          }
+        }} />
         <XIcon className="button hover:bg-red-600 h-7" onClick={() => router.push('/')} />
       </div>
 

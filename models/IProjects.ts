@@ -4,6 +4,8 @@ export type IProject = {
   name: string;
   banner: string;
   description: string;
+  screenshots: string[];
+  technologies: string[];
 }
 
 export type IProjects = {

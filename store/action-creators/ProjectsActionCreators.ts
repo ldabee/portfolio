@@ -19,7 +19,12 @@ export const GetAllProjects = () => async (dispatch: Dispatch<ProjectsAction>) =
 
 export const AddProjectToTab = (project: IProject) => async (dispatch: Dispatch<ProjectsAction>) => {
   const previousState: IProject[] = store.getState().projects.projectsTab;
-  const projectsTab = [...previousState, project];
+  let projectsTab: IProject[] = [];
+  if (previousState.find((prj) => prj.id === project.id) === undefined) {
+    projectsTab = [...previousState, project];
+  } else {
+    projectsTab = [...previousState];
+  }
   dispatch({ type: ProjectsActionType.SET_PROJECT_TAB, projectsTab: projectsTab })
 }
 

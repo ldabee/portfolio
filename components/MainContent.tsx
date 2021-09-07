@@ -71,22 +71,37 @@ const MainContent: FC = () => {
           </div>
         ))}
       </div>
-      <div className="overflow-auto p-5">
+      <div className="relative overflow-auto p-5">
         {projectsState.projectsTab.filter((prj) => prj.title === tabSelected).map((p) => (
           <div key={p.id}>
-            <div className="relative h-80 w-full">
+            <div className="relative h-80 w-full mb-5">
               <Image src={p.banner} layout="fill" objectFit="cover" />
             </div>
-            <div
-
-              className="m-5 "
-            >
+            <div>
+              <div className="flex flex-wrap space-x-2 mb-2">
+                {p?.technologies?.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="bg-gray-600 rounded-full p-2 mr-1 text-xs w-20 text-center"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
               <h3>{p.name}</h3>
-              <p className="mt-3">{p.description}</p>
+              <p className="mt-3 mb-5" dangerouslySetInnerHTML={{ __html: p.description }} />
+            </div>
+            <div className="flex items-start space-x-10 overflow-scroll scrollbar-hide pb-10">
+              {p?.screenshots.map((url, index) => (
+                <div key={index} className="cursor-pointer hover:scale-105 transform transition dureation-300 ease-out">
+                  <div className="relative h-80 w-96 mr-16">
+                    <Image src={url} layout="fixed" width={450} height={280} />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         ))}
-
       </div>
 
 
