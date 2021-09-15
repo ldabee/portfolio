@@ -1,78 +1,93 @@
 [
   {
     "id": 1,
-    "title": "Projet 1",
+    "title": "Project 1",
     "name": "Youtube Clone",
     "banner": "https://images.unsplash.com/photo-1573495804683-641191e042ea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-    "description": "Dans ce projet j'ai souhaité tester mes compétances aussi bien en design qu'en React JS avec tout ce que cette librairie peut offrir.<br> Le but étant de mettre à l'épreuve l'utilisation du 'Context API' de React combiner au useReducer.<br>Le résultat n'est pas terminé mais j'ai tenté de reproduire un comportement efficace et fidèle au modèle de référence",
+    "description": "Dans ce projet j'ai souhaité tester mes compétances aussi bien en design qu'en React .<br> Le but étant l'utilisation du 'Context API' de React combiner au useReducer.<br> Work in progress ...",
     "screenshots": [
       "/prj/yt-cl/home.jpg",
       "/prj/yt-cl/details.jpg"
     ],
     "technologies": [
-      "ReactJS",
+      "React",
       "Typescript",
       "Context API",
       "Material UI",
-      "SQLite",
-      "Express"
+      "Styled Component"
+    ],
+    "siteUrl": "https://youtube-clone-ld.netlify.app/",
+    "sourceGit": [
+      "https://github.com/ldabee/youtube-clone"
     ]
   },
   {
     "id": 2,
     "title": "Project 2",
-    "name": "Name project 2",
-    "banner": "https://images.unsplash.com/photo-1625838144804-300f3907c110?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo accusamus quaerat tempore culpa ratione numquam deleniti ad eos, vel excepturi perferendis. Dolorum obcaecati placeat odio. Minus sint laborum sapiente ipsum.\n    Harum tempore ab pariatur inventore molestias, beatae quaerat dicta praesentium nobis sed. Repellendus pariatur quod ipsum temporibus quia distinctio nihil obcaecati odit excepturi, ratione eveniet, consequatur nisi expedita quas consequuntur.\n    Ipsam, temporibus eos corrupti itaque iure cumque? Quasi veritatis nemo incidunt id nobis? Tempora expedita voluptas, unde facilis, odit aperiam accusamus consequatur ut laudantium esse mollitia nulla magnam nesciunt ratione.",
+    "name": "Rbnb Clone",
+    "banner": "https://links.papareact.com/0fm",
+    "description": "Réalisé en suivant un tutoriel sur Youtube, ce projet m'a permis de découvrir Next JS ainsi que Tailwind CSS. <br>",
     "screenshots": [
-      "/prj/yt-cl/home.jpg",
-      "/prj/yt-cl/details.jpg"
+      "/prj/rbnb-cl/home.jpg",
+      "/prj/rbnb-cl/results.jpg"
     ],
     "technologies": [
-      "ReactJS",
+      "Next JS",
+      "React",
       "Typescript",
-      "Context API",
-      "Material UI",
-      "SQLite",
-      "Express"
+      "Tailwind CSS"
+    ],
+    "siteUrl": "https://rbnb-clone-ld.netlify.app/",
+    "sourceGit": [
+      "https://github.com/ldabee/Rbnb-Clone"
     ]
   },
   {
     "id": 3,
     "title": "Project 3",
-    "name": "Name project 3",
-    "banner": "https://images.unsplash.com/photo-1573495612890-430e48b164df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae laboriosam dolores eius possimus. Quae ipsum nemo quia iusto possimus consectetur suscipit dignissimos eius sed eligendi qui error, laborum voluptates labore.",
+    "name": "Mon portfolio",
+    "banner": "/prj/portf/banner.jpg",
+    "description": "Vous êtes actuellement dessus, après avoir découvert Next JS, j'ai voulu réalisé mon portfolio avec ce framework. <br> Tous les composants sont réalisé \"From scratch\" grâce à Tailwind CSS.<br> Un state globale pour l'application a été initialisé avec Redux Thunk. <br> Bonne visite ...",
     "screenshots": [
-      "/prj/yt-cl/home.jpg",
-      "/prj/yt-cl/details.jpg"
+      "/prj/portf/home.jpg",
+      "/prj/portf/projects.jpg"
     ],
     "technologies": [
-      "ReactJS",
+      "React",
+      "Next JS",
       "Typescript",
-      "Context API",
-      "Material UI",
-      "SQLite",
-      "Express"
+      "Redux",
+      "Redux Thunk",
+      "Tailwind CSS"
+    ],
+    "siteUrl": "https://portfolio-ld.netlify.app/",
+    "sourceGit": [
+      "https://github.com/ldabee/portfolio"
     ]
   },
   {
     "id": 4,
     "title": "Project 4",
-    "name": "Name project 4",
+    "name": "Templates",
     "banner": "https://images.unsplash.com/photo-1573496799175-606e47a7d4f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis possimus, nesciunt ad ipsa deleniti ratione provident dignissimos vitae, quisquam laudantium alias nostrum at molestiae labore dolore consequuntur necessitatibus, aliquam voluptatem?\n    Voluptates, laboriosam? Earum non quis libero culpa itaque ea optio, sunt cum nesciunt magnam sequi doloremque voluptatum dignissimos deleniti repellat nobis vero impedit maiores omnis consequatur iste amet? Aliquam, fugiat?\n    Nulla, tenetur minus. Sint reprehenderit nihil quasi ab quisquam saepe modi deserunt corporis dolores laborum rerum libero ipsa quas commodi sit in odit distinctio, ratione minus. Blanditiis, dolore? Nemo, nostrum.\n    Esse praesentium rerum assumenda distinctio corporis, fugit voluptatum, mollitia explicabo quasi culpa eaque saepe vero adipisci, ex non eos nesciunt et repellendus aperiam provident nam debitis atque. Minus, enim tenetur!\n    Repellendus sit esse quasi, animi adipisci magnam quod neque nemo hic eveniet fugiat consectetur recusandae commodi repudiandae, iste, dolores est similique. Atque quisquam non consectetur eligendi, exercitationem similique iure perferendis.\n    Nostrum ratione exercitationem modi perspiciatis? Aut quasi ut quod minima in consectetur laborum culpa assumenda quidem! Totam, repellat! Iusto nemo enim quam molestiae quos reiciendis saepe exercitationem harum minus blanditiis!\n    Quae sequi aut explicabo aperiam repellendus impedit ducimus deserunt officia accusamus possimus dignissimos, dolorum consequatur voluptatum quibusdam minima fugit quas neque animi et vero temporibus sit. Quaerat quod inventore tempora!\n    Obcaecati culpa labore dolor voluptate vitae dolorum totam fugiat nisi illo sapiente et modi quasi commodi accusamus, error iure delectus corrupti id temporibus sed fugit molestiae. Fugiat autem aut laboriosam.\n    Similique quos minus voluptatum et ducimus distinctio suscipit, sed asperiores dolores ipsum provident optio cum ut vel excepturi veniam consequatur numquam perspiciatis praesentium minima alias. Numquam dolorum enim iure incidunt.\n    Delectus repellat, vero atque odit dolor dolorum architecto velit. Maiores, consequatur id? Eum odio nisi ipsam possimus earum tenetur, tempora, eius delectus quod ipsa ut ducimus amet neque sed officia.",
-    "screenshots": [
-      "/prj/yt-cl/home.jpg",
-      "/prj/yt-cl/details.jpg"
-    ],
+    "description": "Différents templates avec CRUD utilisant Context API de React, Redux Thunk avec backend en Express JS ou .Net framework 4.7.2 ",
+    "screenshots": [],
     "technologies": [
       "ReactJS",
       "Typescript",
       "Context API",
+      "Redux",
+      "Redux Thunk",
       "Material UI",
       "SQLite",
-      "Express"
+      "Express",
+      ".Net framework"
+    ],
+    "siteUrl": "",
+    "sourceGit": [
+      "https://github.com/ldabee/crud-sample",
+      "https://github.com/ldabee/crud-sample-redux-thunk",
+      "https://github.com/ldabee/Api-.Net"
     ]
   }
 ]
