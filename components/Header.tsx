@@ -2,10 +2,17 @@ import React, { FC, useState } from 'react'
 import Image from 'next/image';
 import { MinusIcon, DuplicateIcon, XIcon } from '@heroicons/react/outline';
 import { useRouter } from "next/dist/client/router";
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as Projects from '../store/action-creators/ProjectsActionCreators';
+import { IState } from '../store/reducers';
 
 const Header: FC = () => {
   const router = useRouter();
-  const [currentTab] = useState<string>(router.route)
+  const [currentTab] = useState<string>(router.route);
+  const dispatch = useDispatch();
+  const projectsState = useSelector((state: IState) => state.projects)
+  const { RemoveProjectToTab } = bindActionCreators(Projects, dispatch);
   return (
     <div className="flex bg-gray-600 w-full text-gray-300 text-sm items-center justify-between">
       <div className="inline-flex">
@@ -18,9 +25,9 @@ const Header: FC = () => {
           />
         </div>
         <div className="hidden lg:inline-flex">
-          <span className={currentTab === "/" ? "button bg-gray-500" : "button"} onClick={() => router.push('/')}>Accueil</span>
+          <span className={currentTab === "/" ? "button bg-gray-500" : "button"} onClick={() => { router.push('/'); projectsState.projectsTab.forEach((prj) => RemoveProjectToTab(prj.title)) }}>Accueil</span>
           <span className={currentTab === "/portfolio" ? "button bg-gray-500" : "button"} onClick={() => router.push('/portfolio')}>Portfolio</span>
-          <span className={currentTab === "/contact" ? "button bg-gray-500" : "button"} onClick={() => router.push('/contact')}>Contact</span>
+          <span className={currentTab === "/contact" ? "button bg-gray-500" : "button"} onClick={() => { router.push('/contact'); projectsState.projectsTab.forEach((prj) => RemoveProjectToTab(prj.title)) }}>Contact</span>
         </div>
       </div>
 
@@ -35,7 +42,7 @@ const Header: FC = () => {
             document.documentElement.requestFullscreen()
           }
         }} />
-        <XIcon className="button hover:bg-red-600 h-7" onClick={() => router.push('/')} />
+        <XIcon className="button hover:bg-red-600 h-7" onClick={() => { router.push('/'); projectsState.projectsTab.forEach((prj) => RemoveProjectToTab(prj.title)) }} />
       </div>
 
 

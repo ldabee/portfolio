@@ -14,20 +14,17 @@ const MainContent: FC = () => {
   const projectsState = useSelector((state: IState) => state.projects);
   const { RemoveProjectToTab, AddProjectToTab, SetProjectSelected } = bindActionCreators(Projects, dispatch);
 
-  // const [tabSelected, setTabSelected] = useState<string>();
   const [tabHovered, setTabHovered] = useState<IProject>({} as IProject);
 
   const [mobileList, setMobileList] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   if (projectsState.projectsTab.length > 0) {
-  //     setTabSelected(projectsState?.projectSelected?.title)
-  //   }
-  // }, [projectsState.projectsTab])
-
   const CloseTabs = (tb) => {
     RemoveProjectToTab(tb)
   };
+
+  useEffect(() => {
+    return () => { projectsState.projectsTab.forEach((prj) => RemoveProjectToTab(prj.title)) }
+  }, [])
 
   return (
     <div className="flex flex-col h-full md:h-4/5 bg-gray-900 text-gray-300 border-b border-gray-500 ">
@@ -42,7 +39,7 @@ const MainContent: FC = () => {
                 className="flex flex-grow h-8 items-center justify-center text-white border-b"
                 onClick={() => { AddProjectToTab(tab); setMobileList(false); SetProjectSelected(tab) }}
               >
-                {tab.title}
+                {tab.name}
               </div>
             ))}</div>
         }
@@ -64,7 +61,7 @@ const MainContent: FC = () => {
                 objectPosition="left"
               />
             </div>
-            <p className="p-1  text-green-500 text-sm">{tab.title}</p>
+            <p className="p-1  text-green-500 text-sm">{window.innerWidth < 750 ? `${tab.name.slice(0, 5)}...` : tab.name}</p>
             <XIcon
               className={(tabHovered.title === tab.title || projectsState.projectSelected.title === tab.title) ? "group-hover:flex h-3 bg-transparent leading-6" : "hidden"}
               onClick={() => CloseTabs(tab.title)}
