@@ -23,6 +23,11 @@ interface RemoveProjectToTab {
   projectsTab: IProject[];
 }
 
+interface SetProjectSelected {
+  type: ProjectsActionType.SET_PROJECT_SELECTED;
+  project: IProject
+}
+
 
 
 export type ProjectsAction =
@@ -30,4 +35,5 @@ export type ProjectsAction =
   GetAllSuccess |
   GetAllFailed |
   SetProjectForTab |
-  RemoveProjectToTab;
+  RemoveProjectToTab |
+  SetProjectSelected;

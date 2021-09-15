@@ -12,18 +12,18 @@ import Project from './Project';
 const MainContent: FC = () => {
   const dispatch = useDispatch();
   const projectsState = useSelector((state: IState) => state.projects);
-  const { RemoveProjectToTab, AddProjectToTab } = bindActionCreators(Projects, dispatch);
+  const { RemoveProjectToTab, AddProjectToTab, SetProjectSelected } = bindActionCreators(Projects, dispatch);
 
-  const [tabSelected, setTabSelected] = useState<string>();
+  // const [tabSelected, setTabSelected] = useState<string>();
   const [tabHovered, setTabHovered] = useState<IProject>({} as IProject);
 
   const [mobileList, setMobileList] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (projectsState.projectsTab.length > 0) {
-      setTabSelected(projectsState.projectsTab[projectsState.projectsTab.length - 1].title)
-    }
-  }, [projectsState.projectsTab])
+  // useEffect(() => {
+  //   if (projectsState.projectsTab.length > 0) {
+  //     setTabSelected(projectsState?.projectSelected?.title)
+  //   }
+  // }, [projectsState.projectsTab])
 
   const CloseTabs = (tb) => {
     RemoveProjectToTab(tb)
@@ -40,7 +40,7 @@ const MainContent: FC = () => {
               <div
                 key={index}
                 className="flex flex-grow h-8 items-center justify-center text-white border-b"
-                onClick={() => { AddProjectToTab(tab); setMobileList(false); setTabSelected(tab.title) }}
+                onClick={() => { AddProjectToTab(tab); setMobileList(false); SetProjectSelected(tab) }}
               >
                 {tab.title}
               </div>
@@ -50,8 +50,8 @@ const MainContent: FC = () => {
       <div className="group flex w-full h-5 mb-3" >
         {projectsState.projectsTab.map((tab, index) => (
           <div
-            onClick={() => setTabSelected(tab.title)}
-            className={tabSelected == tab.title ? "bg-gray-900 flex justify-evenly h-7 p-3 items-center  w-40" : "bg-gray-700 flex justify-evenly h-7 p-3 items-center  w-40"}
+            onClick={() => SetProjectSelected(tab)}
+            className={projectsState.projectSelected.title == tab.title ? "bg-gray-900 flex justify-evenly h-7 p-3 items-center  w-40" : "bg-gray-700 flex justify-evenly h-7 p-3 items-center  w-40"}
             key={index}
             onMouseEnter={() => setTabHovered(tab)}
             onMouseLeave={() => setTabHovered({} as IProject)}
@@ -66,14 +66,14 @@ const MainContent: FC = () => {
             </div>
             <p className="p-1  text-green-500 text-sm">{tab.title}</p>
             <XIcon
-              className={(tabHovered.title === tab.title || tabSelected === tab.title) ? "group-hover:flex h-3 bg-transparent leading-6" : "hidden"}
+              className={(tabHovered.title === tab.title || projectsState.projectSelected.title === tab.title) ? "group-hover:flex h-3 bg-transparent leading-6" : "hidden"}
               onClick={() => CloseTabs(tab.title)}
             />
           </div>
         ))}
       </div>
       <div className="relative overflow-auto p-5">
-        {projectsState.projectsTab.filter((prj) => prj.title === tabSelected).map((p, index: number) => (
+        {projectsState.projectsTab.filter((prj) => prj.title === projectsState.projectSelected.title).map((p, index: number) => (
           <Project {...p} key={index} />
         ))}
       </div>

@@ -33,3 +33,7 @@ export const RemoveProjectToTab = (project: string) => async (dispatch: Dispatch
   const projectsTab = previousState.filter((prj) => prj.title !== project);
   dispatch({ type: ProjectsActionType.REMOVE_PROJECT_TAB, projectsTab: projectsTab })
 }
+
+export const SetProjectSelected = (project: IProject) => async (dispatch: Dispatch<ProjectsAction>) => {
+  dispatch({ type: ProjectsActionType.SET_PROJECT_SELECTED, project: project })
+}

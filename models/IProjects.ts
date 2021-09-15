@@ -15,4 +15,5 @@ export type IProjects = {
   error: string;
   loading: boolean;
   projectsTab: IProject[];
+  projectSelected: IProject;
 }

@@ -6,7 +6,8 @@ const initialStateProject: IProjects = {
   projects: [],
   error: "",
   loading: false,
-  projectsTab: []
+  projectsTab: [],
+  projectSelected: {} as IProject
 }
 
 const ProjectsReducer = (state: IProjects = initialStateProject, action: ProjectsAction) => {
@@ -43,8 +44,11 @@ const ProjectsReducer = (state: IProjects = initialStateProject, action: Project
         projectsTab: action.projectsTab
       }
 
-
-
+    case ProjectsActionType.SET_PROJECT_SELECTED:
+      return {
+        ...state,
+        projectSelected: action.project
+      }
 
     default:
       return state

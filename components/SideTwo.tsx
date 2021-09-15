@@ -14,7 +14,7 @@ const SideTwo: FC = () => {
 
   const dispatch = useDispatch();
   const projectsState = useSelector((state: IState) => state.projects)
-  const { GetAllProjects, AddProjectToTab } = bindActionCreators(Projects, dispatch);
+  const { GetAllProjects, AddProjectToTab, SetProjectSelected } = bindActionCreators(Projects, dispatch);
 
   const [selectedProjects, setSelectedProjects] = useState<IProject[]>([]);
   const [showList, setShowList] = useState<boolean>(true);
@@ -27,7 +27,7 @@ const SideTwo: FC = () => {
   const toggle = (projet: IProject) => {
     selectedProjects.find((p) => p.id === projet.id) === undefined ?
       setSelectedProjects((previousState) => [...previousState, projet]) :
-      setSelectedProjects((previousState) => previousState.filter((pr: IProject) => pr.id !== projet.id))
+      setSelectedProjects((previousState) => previousState.filter((pr: IProject) => pr.id !== projet.id));
   }
 
 
@@ -66,7 +66,7 @@ const SideTwo: FC = () => {
                       objectPosition="left"
                     />
                   </div>
-                  <p className="text-green-300 ml-2 pb-1" onClick={() => AddProjectToTab(prj)}>
+                  <p className="text-green-300 ml-2 pb-1" onClick={() => { AddProjectToTab(prj); SetProjectSelected(prj) }}>
                     {prj.name}
                   </p>
                 </div>
