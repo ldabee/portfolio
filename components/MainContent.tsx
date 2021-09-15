@@ -21,7 +21,7 @@ const MainContent: FC = () => {
 
   useEffect(() => {
     if (projectsState.projectsTab.length > 0) {
-      setTabSelected(projectsState.projectsTab[0].title)
+      setTabSelected(projectsState.projectsTab[projectsState.projectsTab.length - 1].title)
     }
   }, [projectsState.projectsTab])
 
