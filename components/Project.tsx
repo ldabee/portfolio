@@ -23,7 +23,7 @@ const Project: FC<IProject> = ({ ...project }) => {
           <h1 className="text-xl font-semibold my-4">{project.name}</h1>
           <p className="mt-3 mb-5" dangerouslySetInnerHTML={{ __html: project.description }} />
         </div>
-        <div className="flex items-start space-x-10 overflow-scroll scrollbar-hide pb-10">
+        <div className="flex items-start space-x-10 overflow-scroll scrollbar-hide">
           {project?.screenshots.map((url, index) => (
             <div key={index} className="cursor-pointer hover:scale-105 transform transition dureation-300 ease-out">
               <div className="relative h-80 w-96 mr-16" onClick={() => window.open(project.siteUrl, "_blank")}>
@@ -34,7 +34,7 @@ const Project: FC<IProject> = ({ ...project }) => {
         </div>
         <div>
           <h1 className="text-xl font-semibold my-4">Code source GitHub : </h1>
-          <div className="flex space-x-2 justify-start">
+          <div className="flex space-x-2 justify-start pb-20">
             <ul>
               {project?.sourceGit.map((url, index: number) => (
                 <li
